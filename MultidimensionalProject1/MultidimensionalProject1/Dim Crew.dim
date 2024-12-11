@@ -1,0 +1,181 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8f7dfff0-5149-4f39-bc04-4a3b8d5e05f9" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Crew</ID>
+  <Name>Dim Crew</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4d7cdcf2-5238-43fe-b046-caa6c48f1fc1">
+    <DataSourceViewID>Airport Warehouse</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="aba89451-7325-41a3-a14f-a61837b2a737">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="7029c0c2-6f01-4897-b9bd-b5eebfee518f">
+      <ID>Crew Id</ID>
+      <Name>Crew Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8040048f-3c29-4bc5-a42b-9cd253261c80">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="065b20a7-c4a4-41fa-81ed-3f1bf70841cd">
+            <TableID>dbo_dim_crew</TableID>
+            <ColumnID>crew_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="015849c3-7440-47fd-90a0-446112e8f879">
+          <AttributeID>Stewardess2 Id</AttributeID>
+          <Name>Stewardess2 Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a4b0a73e-03d6-47b2-9a55-db1dfeccff33">
+          <AttributeID>Pilot Id</AttributeID>
+          <Name>Pilot Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="188139f4-11e1-492f-b1de-f229d98a377e">
+          <AttributeID>Flight Id</AttributeID>
+          <Name>Flight Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="303a6bc9-1767-412f-9f96-7147d238ad5f">
+          <AttributeID>Commander Id</AttributeID>
+          <Name>Commander Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="26627da7-de62-41c4-96a2-0f89d153056f">
+          <AttributeID>Stewardess1 Id</AttributeID>
+          <Name>Stewardess1 Id</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="782a968e-40c9-4c2a-be67-e888f52c0579">
+      <ID>Stewardess2 Id</ID>
+      <Name>Stewardess2 Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eccb2d10-2ef0-4ada-ae8c-bc55f208b34c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c3a9fd07-98a2-4af4-a858-76aa30cde9c0">
+            <TableID>dbo_dim_crew</TableID>
+            <ColumnID>stewardess2_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="76a4f4ae-96cb-4f72-ab4c-a84859fac2da">
+      <ID>Pilot Id</ID>
+      <Name>Pilot Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ed4f8478-1d94-4c37-b377-0fa36f9df449">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="61f8a33d-5079-4378-8c16-cc72b4d59c5a">
+            <TableID>dbo_dim_crew</TableID>
+            <ColumnID>pilot_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="36638817-6fc1-4118-84df-ad73b61d363c">
+      <ID>Flight Id</ID>
+      <Name>Flight Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="25cd8867-dc3c-4b26-933d-2feddd99f73d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2596e3d3-0446-468f-ae5b-34ea5ee2a6cd">
+            <TableID>dbo_dim_crew</TableID>
+            <ColumnID>flight_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="25538235-b79e-4d40-a657-afa6726be969">
+      <ID>Commander Id</ID>
+      <Name>Commander Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d2c527db-dc84-408c-b29a-180aa023df4d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d88454f9-04ea-444c-97b2-bbe5f212ac96">
+            <TableID>dbo_dim_crew</TableID>
+            <ColumnID>commander_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cf92f534-91a0-4866-bb9c-6f614092eee2">
+      <ID>Stewardess1 Id</ID>
+      <Name>Stewardess1 Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="69425851-5c98-4cfa-b328-b4bbfa54f83e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9475ccc0-1e34-443f-be7c-1ea252031867">
+            <TableID>dbo_dim_crew</TableID>
+            <ColumnID>stewardess1_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

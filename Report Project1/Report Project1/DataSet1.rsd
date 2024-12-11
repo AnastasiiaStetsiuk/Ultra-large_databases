@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim Crew'[Crew Id], 'Dim Crew - Flight'[Flight Id], 'Dim Crew - Flight - Aircraft'[Aircraft Id], 'Dim Crew - Flight - Aircraft'[Model 1], 'Dim Crew - Pilot'[Employee Id], 'Dim Crew - Pilot'[Last Name], FILTER(VALUES('Dim Crew - Flight - Aircraft'[Model 1]), LEFT('Dim Crew - Flight - Aircraft'[Model 1], LEN("OTREE")) = "OTREE"), FILTER(VALUES('Dim Crew - Pilot'[Employee Id]), LEFT('Dim Crew - Pilot'[Employee Id], LEN("6554")) = "6554"), FILTER(VALUES('Dim Crew - Flight'[Flight Id]), 'Dim Crew - Flight'[Flight Id] &gt;= VALUE("1") &amp;&amp; 'Dim Crew - Flight'[Flight Id] &lt;= VALUE("50")), FILTER(VALUES('Dim Crew'[Crew Id]), ('Dim Crew'[Crew Id] = VALUE("1"))))</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew</DimensionName>
+                    <HierarchyName>Crew Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew].[Crew Id]</HierarchyUniqueName>
+                    <LevelName>Crew Id</LevelName>
+                    <UniqueName>[Dim Crew].[Crew Id].[Crew Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Crew Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Flight</DimensionName>
+                    <HierarchyName>Flight Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Flight].[Flight Id]</HierarchyUniqueName>
+                    <LevelName>Flight Id</LevelName>
+                    <UniqueName>[Dim Crew - Flight].[Flight Id].[Flight Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Flight Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Flight - Aircraft</DimensionName>
+                    <HierarchyName>Aircraft Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Flight - Aircraft].[Aircraft Id]</HierarchyUniqueName>
+                    <LevelName>Aircraft Id</LevelName>
+                    <UniqueName>[Dim Crew - Flight - Aircraft].[Aircraft Id].[Aircraft Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Aircraft Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Flight - Aircraft</DimensionName>
+                    <HierarchyName>Model 1</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Flight - Aircraft].[Model 1]</HierarchyUniqueName>
+                    <LevelName>Model 1</LevelName>
+                    <UniqueName>[Dim Crew - Flight - Aircraft].[Model 1].[Model 1]</UniqueName>
+                  </ID>
+                  <ItemCaption>Model 1</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Pilot</DimensionName>
+                    <HierarchyName>Employee Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Pilot].[Employee Id]</HierarchyUniqueName>
+                    <LevelName>Employee Id</LevelName>
+                    <UniqueName>[Dim Crew - Pilot].[Employee Id].[Employee Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Employee Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Pilot</DimensionName>
+                    <HierarchyName>Last Name</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Pilot].[Last Name]</HierarchyUniqueName>
+                    <LevelName>Last Name</LevelName>
+                    <UniqueName>[Dim Crew - Pilot].[Last Name].[Last Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Last Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Airport Warehouse</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Crew - Flight - Aircraft].[Model 1]</HierarchyUniqueName>
+                  <Condition xsi:type="BeginsWith">
+                    <Basis>Caption</Basis>
+                    <Expression>OTREE</Expression>
+                  </Condition>
+                </FilterItem>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Crew - Pilot].[Employee Id]</HierarchyUniqueName>
+                  <Condition xsi:type="BeginsWith">
+                    <Basis>Caption</Basis>
+                    <Expression>6554</Expression>
+                  </Condition>
+                </FilterItem>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Crew - Flight].[Flight Id]</HierarchyUniqueName>
+                  <Condition xsi:type="Range">
+                    <Basis>Member</Basis>
+                    <From>[Dim Crew - Flight].[Flight Id].&amp;[1]</From>
+                    <To>[Dim Crew - Flight].[Flight Id].&amp;[50]</To>
+                  </Condition>
+                </FilterItem>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Crew].[Crew Id]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members>
+                      <Member>
+                        <MemberUniqueName>[Dim Crew].[Crew Id].&amp;[1]</MemberUniqueName>
+                      </Member>
+                    </Members>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim Crew'[Crew Id], 'Dim Crew - Flight'[Flight Id], 'Dim Crew - Flight - Aircraft'[Aircraft Id], 'Dim Crew - Flight - Aircraft'[Model 1], 'Dim Crew - Pilot'[Employee Id], 'Dim Crew - Pilot'[Last Name], FILTER(VALUES('Dim Crew - Flight - Aircraft'[Model 1]), LEFT('Dim Crew - Flight - Aircraft'[Model 1], LEN("OTREE")) = "OTREE"), FILTER(VALUES('Dim Crew - Pilot'[Employee Id]), LEFT('Dim Crew - Pilot'[Employee Id], LEN("6554")) = "6554"), FILTER(VALUES('Dim Crew - Flight'[Flight Id]), 'Dim Crew - Flight'[Flight Id] &gt;= VALUE("1") &amp;&amp; 'Dim Crew - Flight'[Flight Id] &lt;= VALUE("50")), FILTER(VALUES('Dim Crew'[Crew Id]), ('Dim Crew'[Crew Id] = VALUE("1"))))</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Crew_Id">
+        <DataField>Dim Crew[Crew Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Flight_Id">
+        <DataField>Dim Crew - Flight[Flight Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Aircraft_Id">
+        <DataField>Dim Crew - Flight - Aircraft[Aircraft Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Model_1">
+        <DataField>Dim Crew - Flight - Aircraft[Model 1]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Employee_Id">
+        <DataField>Dim Crew - Pilot[Employee Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Last_Name">
+        <DataField>Dim Crew - Pilot[Last Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

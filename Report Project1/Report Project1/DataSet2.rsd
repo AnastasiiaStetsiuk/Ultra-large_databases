@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet2">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim Crew - Stewardess1'[Employee Id], 'Dim Crew - Stewardess1'[Last Name], 'Dim Crew - Stewardess1'[Date Of Birth], 'Dim Crew - Stewardess1'[Address], 'Dim Crew - Stewardess2'[Employee Id], 'Dim Crew - Stewardess2'[Last Name], 'Dim Crew - Stewardess2'[Date Of Birth], 'Dim Crew - Stewardess2'[Address], FILTER(VALUES('Dim Crew - Stewardess1'[Employee Id]), 'Dim Crew - Stewardess1'[Employee Id] &gt;= VALUE("1") &amp;&amp; 'Dim Crew - Stewardess1'[Employee Id] &lt;= VALUE("2")), FILTER(VALUES('Dim Crew - Stewardess2'[Employee Id]), LEFT('Dim Crew - Stewardess2'[Employee Id], LEN("655")) = "655"))</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Stewardess1</DimensionName>
+                    <HierarchyName>Employee Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Stewardess1].[Employee Id]</HierarchyUniqueName>
+                    <LevelName>Employee Id</LevelName>
+                    <UniqueName>[Dim Crew - Stewardess1].[Employee Id].[Employee Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Employee Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Stewardess1</DimensionName>
+                    <HierarchyName>Last Name</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Stewardess1].[Last Name]</HierarchyUniqueName>
+                    <LevelName>Last Name</LevelName>
+                    <UniqueName>[Dim Crew - Stewardess1].[Last Name].[Last Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Last Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Stewardess1</DimensionName>
+                    <HierarchyName>Date Of Birth</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Stewardess1].[Date Of Birth]</HierarchyUniqueName>
+                    <LevelName>Date Of Birth</LevelName>
+                    <UniqueName>[Dim Crew - Stewardess1].[Date Of Birth].[Date Of Birth]</UniqueName>
+                  </ID>
+                  <ItemCaption>Date Of Birth</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Stewardess1</DimensionName>
+                    <HierarchyName>Address</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Stewardess1].[Address]</HierarchyUniqueName>
+                    <LevelName>Address</LevelName>
+                    <UniqueName>[Dim Crew - Stewardess1].[Address].[Address]</UniqueName>
+                  </ID>
+                  <ItemCaption>Address</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Stewardess2</DimensionName>
+                    <HierarchyName>Employee Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Stewardess2].[Employee Id]</HierarchyUniqueName>
+                    <LevelName>Employee Id</LevelName>
+                    <UniqueName>[Dim Crew - Stewardess2].[Employee Id].[Employee Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Employee Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Stewardess2</DimensionName>
+                    <HierarchyName>Last Name</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Stewardess2].[Last Name]</HierarchyUniqueName>
+                    <LevelName>Last Name</LevelName>
+                    <UniqueName>[Dim Crew - Stewardess2].[Last Name].[Last Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Last Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Stewardess2</DimensionName>
+                    <HierarchyName>Date Of Birth</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Stewardess2].[Date Of Birth]</HierarchyUniqueName>
+                    <LevelName>Date Of Birth</LevelName>
+                    <UniqueName>[Dim Crew - Stewardess2].[Date Of Birth].[Date Of Birth]</UniqueName>
+                  </ID>
+                  <ItemCaption>Date Of Birth</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Crew - Stewardess2</DimensionName>
+                    <HierarchyName>Address</HierarchyName>
+                    <HierarchyUniqueName>[Dim Crew - Stewardess2].[Address]</HierarchyUniqueName>
+                    <LevelName>Address</LevelName>
+                    <UniqueName>[Dim Crew - Stewardess2].[Address].[Address]</UniqueName>
+                  </ID>
+                  <ItemCaption>Address</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Airport Warehouse</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Crew - Stewardess1].[Employee Id]</HierarchyUniqueName>
+                  <Condition xsi:type="Range">
+                    <Basis>Member</Basis>
+                    <From>[Dim Crew - Stewardess1].[Employee Id].&amp;[1]</From>
+                    <To>[Dim Crew - Stewardess1].[Employee Id].&amp;[2]</To>
+                  </Condition>
+                </FilterItem>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Crew - Stewardess2].[Employee Id]</HierarchyUniqueName>
+                  <Condition xsi:type="BeginsWith">
+                    <Basis>Caption</Basis>
+                    <Expression>655</Expression>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim Crew - Stewardess1'[Employee Id], 'Dim Crew - Stewardess1'[Last Name], 'Dim Crew - Stewardess1'[Date Of Birth], 'Dim Crew - Stewardess1'[Address], 'Dim Crew - Stewardess2'[Employee Id], 'Dim Crew - Stewardess2'[Last Name], 'Dim Crew - Stewardess2'[Date Of Birth], 'Dim Crew - Stewardess2'[Address], FILTER(VALUES('Dim Crew - Stewardess1'[Employee Id]), 'Dim Crew - Stewardess1'[Employee Id] &gt;= VALUE("1") &amp;&amp; 'Dim Crew - Stewardess1'[Employee Id] &lt;= VALUE("2")), FILTER(VALUES('Dim Crew - Stewardess2'[Employee Id]), LEFT('Dim Crew - Stewardess2'[Employee Id], LEN("655")) = "655"))</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Employee_Id">
+        <DataField>Dim Crew - Stewardess1[Employee Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Last_Name">
+        <DataField>Dim Crew - Stewardess1[Last Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Date_Of_Birth">
+        <DataField>Dim Crew - Stewardess1[Date Of Birth]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Address">
+        <DataField>Dim Crew - Stewardess1[Address]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Employee_Id2">
+        <DataField>Dim Crew - Stewardess2[Employee Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Last_Name2">
+        <DataField>Dim Crew - Stewardess2[Last Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Date_Of_Birth2">
+        <DataField>Dim Crew - Stewardess2[Date Of Birth]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Address2">
+        <DataField>Dim Crew - Stewardess2[Address]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

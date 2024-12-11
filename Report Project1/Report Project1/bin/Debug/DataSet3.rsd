@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet3">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim Flight'[Flight Id], 'Dim Flight'[Departure Airport], 'Dim Flight'[Arrival Airport], 'Dim Flight'[Tickets Sold], 'Dim Flight - Aircraft'[Aircraft Id], 'Dim Flight - Aircraft'[Model 1], 'Dim Flight - Aircraft'[Worked Hours], FILTER(VALUES('Dim Flight'[Flight Id]), LEFT('Dim Flight'[Flight Id], LEN("714")) = "714"), FILTER(VALUES('Dim Flight - Aircraft'[Model 1]), LEFT('Dim Flight - Aircraft'[Model 1], LEN("O4M5V5")) = "O4M5V5"))</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Flight</DimensionName>
+                    <HierarchyName>Flight Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Flight].[Flight Id]</HierarchyUniqueName>
+                    <LevelName>Flight Id</LevelName>
+                    <UniqueName>[Dim Flight].[Flight Id].[Flight Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Flight Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Flight</DimensionName>
+                    <HierarchyName>Departure Airport</HierarchyName>
+                    <HierarchyUniqueName>[Dim Flight].[Departure Airport]</HierarchyUniqueName>
+                    <LevelName>Departure Airport</LevelName>
+                    <UniqueName>[Dim Flight].[Departure Airport].[Departure Airport]</UniqueName>
+                  </ID>
+                  <ItemCaption>Departure Airport</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Flight</DimensionName>
+                    <HierarchyName>Arrival Airport</HierarchyName>
+                    <HierarchyUniqueName>[Dim Flight].[Arrival Airport]</HierarchyUniqueName>
+                    <LevelName>Arrival Airport</LevelName>
+                    <UniqueName>[Dim Flight].[Arrival Airport].[Arrival Airport]</UniqueName>
+                  </ID>
+                  <ItemCaption>Arrival Airport</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Flight</DimensionName>
+                    <HierarchyName>Tickets Sold</HierarchyName>
+                    <HierarchyUniqueName>[Dim Flight].[Tickets Sold]</HierarchyUniqueName>
+                    <LevelName>Tickets Sold</LevelName>
+                    <UniqueName>[Dim Flight].[Tickets Sold].[Tickets Sold]</UniqueName>
+                  </ID>
+                  <ItemCaption>Tickets Sold</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Flight - Aircraft</DimensionName>
+                    <HierarchyName>Aircraft Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Flight - Aircraft].[Aircraft Id]</HierarchyUniqueName>
+                    <LevelName>Aircraft Id</LevelName>
+                    <UniqueName>[Dim Flight - Aircraft].[Aircraft Id].[Aircraft Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Aircraft Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Flight - Aircraft</DimensionName>
+                    <HierarchyName>Model 1</HierarchyName>
+                    <HierarchyUniqueName>[Dim Flight - Aircraft].[Model 1]</HierarchyUniqueName>
+                    <LevelName>Model 1</LevelName>
+                    <UniqueName>[Dim Flight - Aircraft].[Model 1].[Model 1]</UniqueName>
+                  </ID>
+                  <ItemCaption>Model 1</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Flight - Aircraft</DimensionName>
+                    <HierarchyName>Worked Hours</HierarchyName>
+                    <HierarchyUniqueName>[Dim Flight - Aircraft].[Worked Hours]</HierarchyUniqueName>
+                    <LevelName>Worked Hours</LevelName>
+                    <UniqueName>[Dim Flight - Aircraft].[Worked Hours].[Worked Hours]</UniqueName>
+                  </ID>
+                  <ItemCaption>Worked Hours</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Airport Warehouse</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Flight].[Flight Id]</HierarchyUniqueName>
+                  <Condition xsi:type="BeginsWith">
+                    <Basis>Caption</Basis>
+                    <Expression>714</Expression>
+                  </Condition>
+                </FilterItem>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Flight - Aircraft].[Model 1]</HierarchyUniqueName>
+                  <Condition xsi:type="BeginsWith">
+                    <Basis>Caption</Basis>
+                    <Expression>O4M5V5</Expression>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim Flight'[Flight Id], 'Dim Flight'[Departure Airport], 'Dim Flight'[Arrival Airport], 'Dim Flight'[Tickets Sold], 'Dim Flight - Aircraft'[Aircraft Id], 'Dim Flight - Aircraft'[Model 1], 'Dim Flight - Aircraft'[Worked Hours], FILTER(VALUES('Dim Flight'[Flight Id]), LEFT('Dim Flight'[Flight Id], LEN("714")) = "714"), FILTER(VALUES('Dim Flight - Aircraft'[Model 1]), LEFT('Dim Flight - Aircraft'[Model 1], LEN("O4M5V5")) = "O4M5V5"))</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Flight_Id">
+        <DataField>Dim Flight[Flight Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Departure_Airport">
+        <DataField>Dim Flight[Departure Airport]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Arrival_Airport">
+        <DataField>Dim Flight[Arrival Airport]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Tickets_Sold">
+        <DataField>Dim Flight[Tickets Sold]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Aircraft_Id">
+        <DataField>Dim Flight - Aircraft[Aircraft Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Model_1">
+        <DataField>Dim Flight - Aircraft[Model 1]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Worked_Hours">
+        <DataField>Dim Flight - Aircraft[Worked Hours]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
